@@ -9,6 +9,7 @@ data class Product(
     @ColumnInfo val brand: String,
     @ColumnInfo val category: String,
     @ColumnInfo val description: String,
+    @ColumnInfo val price: Int,
     @ColumnInfo val discountPercentage: Double,
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
 )

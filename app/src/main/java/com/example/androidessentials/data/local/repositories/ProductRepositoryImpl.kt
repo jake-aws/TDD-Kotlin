@@ -3,9 +3,12 @@ package com.example.androidessentials.data.local.repositories
 import androidx.lifecycle.LiveData
 import com.example.androidessentials.data.local.dao.ProductDAO
 import com.example.androidessentials.domain.entities.Product
+import com.example.androidessentials.domain.entities.ProductResponse
+import com.example.androidessentials.domain.entities.toProduct
 import com.example.androidessentials.domain.repositories.ProductRepository
+import javax.inject.Inject
 
-class ProductRepositoryImpl(private val productDAO: ProductDAO) : ProductRepository {
+class ProductRepositoryImpl @Inject constructor(private val productDAO: ProductDAO) : ProductRepository {
     override suspend fun insertProduct(product: Product) {
         productDAO.insertProduct(product)
     }

@@ -1,17 +1,18 @@
 package com.example.androidessentials.domain.repositories
 
 import androidx.lifecycle.LiveData
-import com.example.androidessentials.domain.entities.Product
+import com.example.androidessentials.domain.entities.ProductEntity
 
 interface ProductRepository {
 
-    suspend fun insertProduct(product: Product)
+    suspend fun insertProduct(productEntity: ProductEntity)
 
-    suspend fun deleteProduct(product: Product)
+    suspend fun deleteProduct(productEntity: ProductEntity)
 
-    suspend fun updateProduct(product: Product)
+    suspend fun updateProduct(productEntity: ProductEntity)
 
-    fun getAllProduct(): LiveData<List<Product>>
+    suspend fun getAllProduct(): LiveData<List<ProductEntity>>
 
-    fun getProductById(productId: Int): LiveData<Product>
+    suspend fun getProductById(productId: Int): LiveData<ProductEntity>
+
 }

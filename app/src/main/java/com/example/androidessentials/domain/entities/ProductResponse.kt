@@ -13,12 +13,12 @@ data class ProductResponse(
     val thumbnail: String,
     val title: String
 )
-fun ProductResponse.toProduct(): Product {
-    return Product(
-        brand = this.brand,
-        category = this.category,
-        price = this.price,
-        description = this.description,
-        discountPercentage = this.discountPercentage
+fun ProductResponse.toProductEntity(): ProductEntity {
+    return ProductEntity(
+        brand = brand,
+        category = category,
+        price = price,
+        description = description,
+        discountPercentage = discountPercentage
     )
 }

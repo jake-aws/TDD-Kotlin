@@ -1,15 +1,16 @@
 package com.example.androidessentials.domain.entities
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
-import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
-@Entity(tableName = "product_items")
+@Parcelize
 data class Product(
-    @ColumnInfo val brand: String,
-    @ColumnInfo val category: String,
-    @ColumnInfo val description: String,
-    @ColumnInfo val price: Int,
-    @ColumnInfo val discountPercentage: Double,
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
-)
+    val brand: String,
+    val category: String,
+    val description: String,
+    val price: Int,
+    val discountPercentage: Double,
+    val id: Int,
+):Parcelable
